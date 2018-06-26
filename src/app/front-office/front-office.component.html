@@ -1,19 +1,24 @@
-<table>
-  <tr>
-    <th>Ville départ</th>
-    <th>Ville arrivée</th>
-    <th>Nombre de kilomètres</th>
-    <th>Date</th>
-    <th>Nom</th>
-    <th>Prénom</th>
-  </tr>
-
-  <tr *ngFor="let trajets of valueRetour">
-    <td>{{ trajets.villeDep }}</td>
-    <td>{{ trajets.villeArr }}</td>
-    <td>{{ trajets.nbKm }}</td>
-    <td>{{ trajets.date.date }}</td>
-    <td>{{ trajets.nom }}</td>
-    <td>{{ trajets.prenom }}</td>
-  </tr>
-</table>
+<div class="ui container segment">
+  <table class="ui table">
+    <thead>
+      <tr>
+        <th>Ville départ</th>
+        <th>Ville arrivée</th>
+        <th>Nombre de kilomètres</th>
+        <th>Date</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let trajets of valueRetour">
+        <td>{{ trajets.villeDep }}</td>
+        <td>{{ trajets.villeArr }}</td>
+        <td>{{ trajets.nbKm }}</td>
+        <td>{{ trajets.date.date }}</td>
+        <td>{{ trajets.nom }}</td>
+        <td>{{ trajets.prenom }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

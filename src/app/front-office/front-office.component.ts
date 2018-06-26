@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { Http, Headers, URLSearchParams } from '@angular/http';
+import {SuiModule} from 'ng2-semantic-ui';
 
 @Component({
   selector: 'app-front-office',
