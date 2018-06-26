@@ -1,0 +1,19 @@
+<p>
+  recupdata works! {{valueRetour | json}}
+</p>
+<br>
+<table>
+  <tr>
+    <th>id</th>
+    <th>nb kilomètres</th>
+    <th>nom</th>
+    <th>prénom</th>
+  </tr>
+
+  <tr *ngFor="let trajets of valueRetour">
+    <td>{{ trajets.id }}</td>
+    <td>{{ trajets.nbKm }}</td>
+    <td>{{ trajets.nom }}</td>
+    <td>{{ trajets.prenom }}</td>
+  </tr>
+</table>
