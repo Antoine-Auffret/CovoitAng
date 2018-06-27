@@ -21,7 +21,7 @@ export class FrontOfficeComponent {
   // dans une variable définie avant
   doGET() {
   console.log("GET");
-  let url = `http://localhost:8000/api/trajets`;
+  let url = `http://prjsym.cir3-frm-smf-ang-33/api/trajets`;
   //this.http.get(url).subscribe(res => console.log(res.json()));
   this.http.get(url).subscribe(res => this.valueRetour = res.json()['0']);
   }
