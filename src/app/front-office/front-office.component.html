@@ -19,7 +19,7 @@
         <td>{{ trajets.date.date }}</td>
         <td>{{ trajets.nom }}</td>
         <td>{{ trajets.prenom }}</td>
-        <td><a routerLink="/trajet/{{trajets.id}}">More</a></td>
+        <td><a routerLink="/trajet/{{trajets.id}}" (click)="doGET(trajets.id)">More</a></td>
       </tr>
     </tbody>
   </table>

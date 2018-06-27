@@ -1,17 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-show-trajet',
   templateUrl: './show-trajet.component.html',
   styleUrls: ['./show-trajet.component.css']
 })
-export class ShowTrajetComponent implements OnInit {
-  id:any;
+export class ShowTrajetComponent {
 
-  constructor(private maRoute: ActivatedRoute) { }
-
-  ngOnInit() {
-    this.id = this.maRoute.snapshot.paramMap.get('id');
+  constructor() { }
+  MyCtrl() {
+    console.log("reload")
+    window.location.reload();
   }
 }
