@@ -8,6 +8,7 @@
         <th>Date</th>
         <th>Nom</th>
         <th>Prénom</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -18,6 +19,7 @@
         <td>{{ trajets.date.date }}</td>
         <td>{{ trajets.nom }}</td>
         <td>{{ trajets.prenom }}</td>
+        <td><a routerLink="/trajet/{{trajets.id}}">More</a></td>
       </tr>
     </tbody>
   </table>
