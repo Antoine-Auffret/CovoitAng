@@ -8,6 +8,11 @@
         <th>Date</th>
         <th>Nom</th>
         <th>Prénom</th>
+        <th>Téléphone</th>
+        <th>Mail</th>
+        <th>Nom marque</th>
+        <th>Modèle</th>
+        <th>Nombre de places</th>
         <th></th>
       </tr>
     </thead>
@@ -16,9 +21,14 @@
         <td>{{ trajets.villeDep }}</td>
         <td>{{ trajets.villeArr }}</td>
         <td>{{ trajets.nbKm }}</td>
-        <td>{{ trajets.date.date }}</td>
+        <td>{{ trajets.date.date | date: 'dd-MM-yyyy HH:mm:ss' }}</td>
         <td>{{ trajets.nom }}</td>
         <td>{{ trajets.prenom }}</td>
+        <td>{{ trajets.tel }}</td>
+        <td>{{ trajets.mail }}</td>
+        <td>{{ trajets.marqueNom }}</td>
+        <td>{{ trajets.modele }}</td>
+        <td>{{ trajets.nbPlaces }}</td>
         <td><a routerLink="/trajet/{{trajets.id}}" (click)="doGET(trajets.id)">More</a></td>
       </tr>
     </tbody>
