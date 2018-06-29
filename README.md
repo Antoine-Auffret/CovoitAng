@@ -14,12 +14,17 @@ service apache2 reload
 Attribuer le nom d'hôte "foang.cir3-frm-smf-ang-33" à une adresse IP
 ```bash
 sudo vim /etc/hosts
-<ypur_ip> foang.cir3-frm-smf-ang-33
+<your_ip> foang.cir3-frm-smf-ang-33
 ```
 
 ## Utilisation
 
 ### Front Office Url : http://foang.cir3-frm-smf-ang-33
+
+### API symfony
+
+Le projet Angular s'appuie sur l'API de symfony avec une adresse par défaut : http://prjsymf.cir3-frm-smf-ang-33/api/trajets
+Vous pouvez la changer dans le fichier : src/app/front-office/front-office.component.ts
 
 
 
