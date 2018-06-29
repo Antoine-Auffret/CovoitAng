@@ -1,5 +1,28 @@
 # CovoitAng
 
+## Installation du virtual host angular
+
+Copier le fichier "etd1-ang.conf" sur la vm
+```bash
+scp etd1-ang.conf etdfrm1@172.31.4.33:/home/etdfrm1
+sudo mv etd1-ang.conf /etc/apache2/sites-available/.
+```
+Activer le virtual host sur la vm
+```bash
+ssh etdfrm1@172.31.4.33
+a2ensite etd1-ang.conf
+service apache2 reload
+```
+Attribuer le nom d'hôte "foang.cir3-frm-smf-ang-33" à une adresse IP sur le PC
+```bash
+sudo vim /etc/hosts
+172.31.4.33 foang.cir3-frm-smf-ang-33
+```
+
+## Utilisation
+
+### Front Office Url : http://foang.cir3-frm-smf-ang-33
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
