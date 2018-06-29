@@ -8,19 +8,19 @@ import { AppComponent } from './app.component';
 import { FrontOfficeComponent } from './front-office/front-office.component';
 
 import {SuiModule} from 'ng2-semantic-ui';
-import { ShowTrajetComponent } from './show-trajet/show-trajet.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FrontOfficeComponent,
-    ShowTrajetComponent
+    FrontOfficeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule,
-    SuiModule
+    SuiModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

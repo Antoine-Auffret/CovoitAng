@@ -1,58 +1,72 @@
 <div class="ui container segment">
-  <table class="ui table">
-    <thead>
-      <tr>
-        <th>Ville départ</th>
-        <th>Ville arrivée</th>
-        <th>Nombre de kilomètres</th>
-        <th>Date</th>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let trajets of valueRetour">
-        <td>{{ trajets.villeDep }}</td>
-        <td>{{ trajets.villeArr }}</td>
-        <td>{{ trajets.nbKm }}</td>
-        <td>{{ trajets.date.date | date: 'dd-MM-yyyy HH:mm:ss' }}</td>
-        <td>{{ trajets.nom }}</td>
-        <td>{{ trajets.prenom }}</td>
-        <td> <button (click)="detail.getDetail(trajets.id)">More</button><br></td>
-      </tr>
-    </tbody>
-  </table>
-  <table class="ui table">
-    <thead>
-      <tr>
-        <th>Ville départ</th>
-        <th>Ville arrivée</th>
-        <th>Nombre de kilomètres</th>
-        <th>Date</th>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Téléphone</th>
-        <th>Mail</th>
-        <th>Nom marque</th>
-        <th>Modèle</th>
-        <th>Nombre de places</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let trajetsDetail of detail.valueRetour">
-        <td>{{ trajetsDetail.villeDep }}</td>
-        <td>{{ trajetsDetail.villeArr }}</td>
-        <td>{{ trajetsDetail.nbKm }}</td>
-        <td>{{ trajetsDetail.date.date | date: 'dd-MM-yyyy HH:mm:ss' }}</td>
-        <td>{{ trajetsDetail.nom }}</td>
-        <td>{{ trajetsDetail.prenom }}</td>
-        <td>{{ trajetsDetail.tel }}</td>
-        <td>{{ trajetsDetail.mail }}</td>
-        <td>{{ trajetsDetail.marqueNom }}</td>
-        <td>{{ trajetsDetail.modele }}</td>
-        <td>{{ trajetsDetail.nbPlaces }}</td>
-      </tr>
-    </tbody>
-  </table>
+     <!-- formulaire de filtrage -->
+    <form class="ui form" (ngSubmit)="show()">
+        <div class="ui input">
+          <input name="input_search" placeholder="Search..." type="text" [ngModel]="filter.text" (ngModelChange)="filter.text = $event">
+        </div>
+        <sui-select class="selection" name="type" [ngModel]="filter.type" (ngModelChange)="filter.type = $event" #select>
+            <sui-select-option value="Ville de départ"></sui-select-option>
+            <sui-select-option value="Ville d'arrivée"></sui-select-option>
+            <sui-select-option value="Ville de départ et d'arrivée"></sui-select-option>
+        </sui-select>
+        <button type="submit" class="ui icon primary button"><i class="search icon"></i></button>
+    </form>
+    <!-- tableau des trajets -->
+    <table class="ui table">
+        <thead>
+          <tr>
+            <th>Ville départ</th>
+            <th>Ville arrivée</th>
+            <th>Nombre de kilomètres</th>
+            <th>Date</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let trajets of valueRetour">
+            <td>{{ trajets.villeDep }}</td>
+            <td>{{ trajets.villeArr }}</td>
+            <td>{{ trajets.nbKm }}</td>
+            <td>{{ trajets.date.date | date: 'dd-MM-yyyy HH:mm:ss' }}</td>
+            <td>{{ trajets.nom }}</td>
+            <td>{{ trajets.prenom }}</td>
+            <td> <button class="ui button" (click)="detail.getDetail(trajets.id)">More</button><br></td>
+          </tr>
+        </tbody>
+    </table>
+    <!-- tableau des détails d'un trajet -->
+    <table class="ui table">
+        <thead>
+          <tr>
+            <th>Ville départ</th>
+            <th>Ville arrivée</th>
+            <th>Nombre de kilomètres</th>
+            <th>Date</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Téléphone</th>
+            <th>Mail</th>
+            <th>Nom marque</th>
+            <th>Modèle</th>
+            <th>Nombre de places</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let trajetsDetail of detail.valueRetour">
+            <td>{{ trajetsDetail.villeDep }}</td>
+            <td>{{ trajetsDetail.villeArr }}</td>
+            <td>{{ trajetsDetail.nbKm }}</td>
+            <td>{{ trajetsDetail.date.date | date: 'dd-MM-yyyy HH:mm:ss' }}</td>
+            <td>{{ trajetsDetail.nom }}</td>
+            <td>{{ trajetsDetail.prenom }}</td>
+            <td>{{ trajetsDetail.tel }}</td>
+            <td>{{ trajetsDetail.mail }}</td>
+            <td>{{ trajetsDetail.marqueNom }}</td>
+            <td>{{ trajetsDetail.modele }}</td>
+            <td>{{ trajetsDetail.nbPlaces }}</td>
+          </tr>
+        </tbody>
+    </table>
 </div>
