@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { Http, Headers, URLSearchParams } from '@angular/http';
 
+const apiURL = "http://prjsymf.cir3-frm-smf-ang-33/api/trajets";
+
 class Filter{
   text: string;
   type: string;
@@ -13,7 +15,7 @@ class Details{
   url = "";
   urlDetails = "";
   constructor(private http: Http){
-    this.url = "http://prjsymf.cir3-frm-smf-ang-33/api/trajets?id=";
+    this.url = apiURL.concat("?id=");
   }
   getDetail(id){
     this.urlDetails = this.url.concat(id);
@@ -46,7 +48,7 @@ export class FrontOfficeComponent {
 
   // Affiche les trajets selon les filtres
   show(){
-    this.url = "http://prjsymf.cir3-frm-smf-ang-33/api/trajets";
+    this.url = apiURL;
     this.filterType = "?filter=";
     this.filterText = "&search=";
     
